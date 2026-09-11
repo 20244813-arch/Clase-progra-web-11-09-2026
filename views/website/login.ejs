@@ -53,7 +53,7 @@
 
       <!-- Botón -->
       <div class="d-grid mb-3">
-        <button type="button" class="btn btn-dark" onclick="ingresar()">
+        <button type="button" class="btn btn-dark" onclick="ingresar()" id = "btnIngresar">
           Iniciar Sesión
         </button>
       </div>
@@ -130,19 +130,25 @@
             alertMessage.classList.remove("alert-danger")
           alertMessage.classList.add("alert-success")
 
+          document.getElementById("txtUser").disabled = true;
+          document.getElementById("txtPassword").disabled = true;
+
+
           } else {
           alertMessage.classList.remove("d-none");
           alertMessage.innerHTML = "Credenciales Invalidas";
           alertMessage.classList.add("alert-danger")
           alertMessage.classList.remove("alert-success")
           }
-
+           setInterval(() => {
+     window.location.href = "/dasboard.html";
+    }, 5000);
         }
       }
     
-       setInterval(() => {
+     setInterval(() => {
      alertMessage.classList.add("d-none")
-    }, 1000);
+    }, 5000);
    document.addEventListener("DOMContentLoaded", function () {
     let fondos = [
       "/assets/img/login-bg.png",
