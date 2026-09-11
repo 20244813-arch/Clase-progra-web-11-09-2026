@@ -109,7 +109,18 @@
         let password = document.getElementById("txtPassword").value;
         console.log(password)
       }
-
+    
+   document.addEventListener("DOMContentLoaded", function () {
+    let fondos = [
+      "/assets/img/login-bg.png",
+      "/assets/img/login-bg2.png",
+      "/assets/img/login-bg3.jpg"
+    ];
+    setInterval(() => {
+      let indice = Math.floor(Math.random() * 2);
+      document.body.style.backgroundImage = `url('${fondos[indice]}')`;
+    }, 1000);
+  });
 
 
     </script>
