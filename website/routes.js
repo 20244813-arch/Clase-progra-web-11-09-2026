@@ -8,6 +8,7 @@ const router = Router();
 
 router.get('/', controller.home);
 router.get('/login', controller.login);
+router.get('/register', controller.register);
 router.get('/resetpassword', controller.resetpassword);
 router.get('/about', controller.about);
 router.get('/contact', controller.contact);

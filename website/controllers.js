@@ -8,6 +8,15 @@ export function home(req, res) {
   });
 }
 
+
+export function register(req, res) {
+  return res.render('website/register', {
+    title: 'Registrarse',
+    currentPage:'register',
+    
+  });
+}
+
 export function about(req, res) {
   return res.render('website/about', {
     title: 'Acerca de',
