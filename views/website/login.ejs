@@ -15,7 +15,9 @@
           alt="Universidad de Lima"
         >
       </div>
-
+        <div class="alert alert-danger d-none" role="alert" id="alertMessage">
+          Error: Verifique que los campos sean llenados correctamente
+      </div>
       <!-- Usuario -->
       <div class="mb-3">
         <label for="txtUser" class="form-label">
@@ -108,13 +110,20 @@
 
         let password = document.getElementById("txtPassword").value;
         console.log(password)
+
+        if(username == "" || password == ""){
+          alert("Llena los campos");
+          let alertMessage= document.getElementById("alertMessage")
+          console.log(alertMessage)
+          console.log(alertMessage.classList)
+          alertMessage.classList.remove("d-none")
+        }
       }
     
    document.addEventListener("DOMContentLoaded", function () {
     let fondos = [
       "/assets/img/login-bg.png",
-      "/assets/img/login-bg2.png",
-      "/assets/img/login-bg3.jpg"
+      "/assets/img/login2.png",
     ];
     setInterval(() => {
       let indice = Math.floor(Math.random() * 2);
