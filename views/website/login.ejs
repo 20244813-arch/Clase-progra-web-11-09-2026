@@ -18,6 +18,9 @@
         <div class="alert alert-danger d-none" role="alert" id="alertMessage">
           Error: Verifique que los campos sean llenados correctamente
       </div>
+      <div class="alert alert-success d-none" role="alert">
+    Bienvenido
+     </div>
       <!-- Usuario -->
       <div class="mb-3">
         <label for="txtUser" class="form-label">
@@ -116,10 +119,30 @@
           let alertMessage= document.getElementById("alertMessage")
           console.log(alertMessage)
           console.log(alertMessage.classList)
-          alertMessage.classList.remove("d-none")
+          alertMessage.classList.remove("d-none");
+          alertMessage.classList.add("alert-danger")
+          alertMessage.classList.remove("alert-success")
+          alertMessage.innerHTML = "Oe llena los campos";
+        } else {
+          if(username == "admin" && password == "123"){
+            alertMessage.classList.remove("d-none");
+            alertMessage.innerHTML = "Bienvenido";
+            alertMessage.classList.remove("alert-danger")
+          alertMessage.classList.add("alert-success")
+
+          } else {
+          alertMessage.classList.remove("d-none");
+          alertMessage.innerHTML = "Credenciales Invalidas";
+          alertMessage.classList.add("alert-danger")
+          alertMessage.classList.remove("alert-success")
+          }
+
         }
       }
     
+       setInterval(() => {
+     alertMessage.classList.add("d-none")
+    }, 1000);
    document.addEventListener("DOMContentLoaded", function () {
     let fondos = [
       "/assets/img/login-bg.png",
